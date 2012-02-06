@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B374E1F14DB15A700392748 /* _NSThemeWidgetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _NSThemeWidgetCell.h; path = AppKit/_NSThemeWidgetCell.h; sourceTree = "<group>"; };
 		FA16383512FE09B300A6B1DD /* NSFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFrameView.h; sourceTree = "<group>"; };
 		FA16383612FE09B300A6B1DD /* NSThemeFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSThemeFrame.h; sourceTree = "<group>"; };
 		FA16383712FE09B300A6B1DD /* NSTitledFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTitledFrame.h; sourceTree = "<group>"; };
@@ -34,7 +35,6 @@
 		FA16384012FE107200A6B1DD /* NSBezierPath+PXRoundedRectangleAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+PXRoundedRectangleAdditions.m"; sourceTree = "<group>"; };
 		FA2860E41352861700DA2437 /* NSBezierPath+MCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+MCAdditions.h"; sourceTree = "<group>"; };
 		FA2860E51352861700DA2437 /* NSBezierPath+MCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+MCAdditions.m"; sourceTree = "<group>"; };
-		FA35FC5613530CD400108818 /* _NSThemeWidgetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _NSThemeWidgetCell.h; sourceTree = "<group>"; };
 		FA35FC5813530CFB00108818 /* BMXThemeWidgetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BMXThemeWidgetCell.h; path = Classes/SIMBL/Categories/BMXThemeWidgetCell.h; sourceTree = "<group>"; };
 		FA35FC5913530CFB00108818 /* BMXThemeWidgetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BMXThemeWidgetCell.m; path = Classes/SIMBL/Categories/BMXThemeWidgetCell.m; sourceTree = "<group>"; };
 		FA96269912FDFFBE00EE150A /* Black Mac OS X.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Black Mac OS X.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +72,7 @@
 		FA16383412FE09B300A6B1DD /* Private Headers */ = {
 			isa = PBXGroup;
 			children = (
-				FA35FC5613530CD400108818 /* _NSThemeWidgetCell.h */,
+				9B374E1F14DB15A700392748 /* _NSThemeWidgetCell.h */,
 				FA16383512FE09B300A6B1DD /* NSFrameView.h */,
 				FA16383612FE09B300A6B1DD /* NSThemeFrame.h */,
 				FA16383712FE09B300A6B1DD /* NSTitledFrame.h */,
@@ -215,6 +215,7 @@
 		FA96269012FDFFBE00EE150A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Alex Zielenski";
 			};
 			buildConfigurationList = FA96269312FDFFBE00EE150A /* Build configuration list for PBXProject "Black Mac OS X" */;

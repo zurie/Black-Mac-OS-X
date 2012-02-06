@@ -30,8 +30,8 @@ typedef enum {
 	BMXTitlebarButtonStyle style = self.buttonID;
 	BOOL disabled = ([(NSString*)[self coreUIState] isEqualToString:@"disabled"]);
 	BOOL shouldRollover = ([(NSString*)[self coreUIState] isEqualToString:@"rollover"]);
-//	NSLog(@"%@", (NSString*)[self coreUIState]);
-//	NSLog(@"%@", (NSDictionary*)_coreUIDrawOptions);
+	////NSLog(@"%@", (NSString*)[self coreUIState]);
+	////NSLog(@"%@", (NSDictionary*)_coreUIDrawOptions);
 
 	NSRect frame = NSZeroRect;
 	if (style==BMXTitlebarToolbar) {
@@ -47,11 +47,11 @@ typedef enum {
 	if (!disabled) {
 		if (style==BMXTitlebarClose) {
 			edited = [self isEdited]; // _NSThemeCloseWidgetCell
-			drawGradient=self.class.redGradient;
+			drawGradient=self.class.zurieGradient;
 		} else if (style==BMXTitlebarCollapse) {
-			drawGradient=self.class.yellowGradient;
+			drawGradient=self.class.zurieGradient;
 		} else if (style==BMXTitlebarZoom) {
-			drawGradient=self.class.greenGradient;
+			drawGradient=self.class.zurieGradient;
 		} else if (style==BMXTitlebarToolbar) {
 			drawGradient=self.class.silverGradient;
 		}
@@ -122,6 +122,18 @@ typedef enum {
 	}
 	return redGradient;
 }
+
+//(0.921952, 1.000000, 0.609760)
+// (0.799882, 1.000000, 0.000000)
++ (NSGradient*)zurieGradient {
+	static NSGradient *blueGradient;
+	if (!blueGradient) {
+		blueGradient=[[NSGradient alloc] initWithStartingColor:[NSColor colorWithCalibratedRed:0.921952 green:1.000000 blue:0.609760 alpha:1.000] 
+												  endingColor:[NSColor colorWithCalibratedRed:0.799882 green:1.000000 blue:0.000000 alpha:1.000]];
+	}
+	return blueGradient;
+}
+
 + (NSGradient*)yellowGradient {
 	static NSGradient *yellowGradient;
 	if (!yellowGradient) {

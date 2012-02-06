@@ -24,23 +24,42 @@
 
 @implementation BMXController
 SYNTHESIZE_SINGLETON_FOR_CLASS(BMXController); // Create easy singleton. Thanks http://cocoawithlove.com/2008/11/singletons-appdelegates-and-top-level.html
+
 + (void)load {	
+    if (![[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.apple.RemoteDesktop"]) {
+
 	BMXController *controller = [BMXController sharedBMXController];
 	[controller swizzle];
 	
 	//	[[NSApplication sharedApplication] makeWindowsPerform:@selector(display)
 	//											  inOrder:NO];
 	
+    
+    
+    
 	// Redraw the currently displayed windows with the black stuff on it
 	for (NSWindow *window in [[NSApplication sharedApplication] windows]) {
+
 		[window display];
-	}
+    }
+    }
+}    
+
+static BOOL shouldBlacken() {
+    BOOL fusion = [[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.vmware.fusion"];
+    BOOL remote = [[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.apple.RemoteDesktop"];
+    //   return (fusion);    
+    return (fusion || remote);    
 }
+
+
 - (void)swizzle {
-	NSLog(@"Swizzling…");
-	[NSThemeFrame swizzle];
-	[NSCell swizzle];
-	[NSButtonCell swizzle];
-	[NSSegmentedCell swizzle];
+    if (!shouldBlacken()) {
+        //NSLog(@"Swizzling…");
+        [NSThemeFrame swizzle];
+        [NSCell swizzle];
+        [NSButtonCell swizzle];
+        [NSSegmentedCell swizzle];
+    }
 }
 @end

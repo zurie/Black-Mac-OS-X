@@ -37,16 +37,24 @@ static NSGradient *inactiveGradient = nil;
 	[self jr_aliasMethod:@selector(backgroundStyle) 
 					withSelector:@selector(orig_backgroundStyle)
 						   error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	[self jr_swizzleMethod:@selector(backgroundStyle)
 						withMethod:@selector(new_backgroundStyle)
 							 error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 }
 - (BOOL)isBMXCustomized {
 	// no need
 	return NO;
 }
+
+
+static BOOL is_Finder() {
+BOOL chrome = [[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.apple.finder"];
+return (chrome);
+}
+
+
 #pragma mark - Overrides
 - (NSBackgroundStyle)new_backgroundStyle {
 	/*if (self.controlView.superview.isBMXCustomized == YES)
@@ -64,7 +72,12 @@ static NSGradient *inactiveGradient = nil;
 		NSRect frame = self.controlView.frame;
 		frame = [self.controlView convertRect:frame toView:nil];
 		if (((NSEqualRects(NSIntersectionRect(topBar, frame), frame)||NSEqualRects(NSIntersectionRect(bottomBar, frame), frame))&&!self.isBordered&&![self.controlView isKindOfClass:[NSSegmentedControl class]])&&topBar.size.width!=0&&bottomBar.size.width!=0) { // no segmented controls for now
-			return NSBackgroundStyleLowered; // If the controlVIew's entire frame is inside the top bar or the bottom bar, make the cell text/images white. Coincidentally works for toolbars as well
+            
+            // I disabled this to make TotalFinder text black on the tabs.
+            if (!is_Finder()) {
+			return NSBackgroundStyleLowered;
+            }
+            // If the controlVIew's entire frame is inside the top bar or the bottom bar, make the cell text/images white. Coincidentally works for toolbars as well
 		}
 	}
 	return (NSBackgroundStyle)[self orig_backgroundStyle];
@@ -102,23 +115,27 @@ static NSGradient *inactiveGradient = nil;
 	[self jr_aliasMethod:@selector(_coreUIDrawSegmentBackground:withCellFrame:inView:) 
 			withSelector:@selector(orig_coreUIDrawSegmentBackground:withCellFrame:inView:)
 				   error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	[self jr_swizzleMethod:@selector(_coreUIDrawSegmentBackground:withCellFrame:inView:)
 				withMethod:@selector(new_coreUIDrawSegmentBackground:withCellFrame:inView:)
 					 error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 }
 - (NSBackgroundStyle)interiorBackgroundStyle {
-	return NSBackgroundStyleLowered;
+    return NSBackgroundStyleLowered;
+
 }
 - (NSBackgroundStyle)backgroundStyle {
-	return NSBackgroundStyleLowered;
+    return NSBackgroundStyleLowered;
+
 }
 - (long long)interiorBackgroundStyleForSegment:(long long)arg1 {
-	return NSBackgroundStyleLowered;
+    return NSBackgroundStyleLowered;
+
 }
 - (long long)_initialBackgroundStyleCompatibilityGuess {
-	return NSBackgroundStyleLowered;
+    return NSBackgroundStyleLowered;
+
 }
 - (BOOL)new_coreUIDrawSegmentBackground:(long long)arg1 withCellFrame:(NSRect)arg2 inView:(NSView*)arg3 {
 	NSRect frame = arg2;
@@ -201,20 +218,20 @@ static NSGradient *inactiveGradient = nil;
 	[self jr_aliasMethod:@selector(drawBezelWithFrame:inView:) 
 			withSelector:@selector(orig_drawBezelWithFrame:inView:)
 				   error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	[self jr_swizzleMethod:@selector(drawBezelWithFrame:inView:)
 				withMethod:@selector(new_drawBezelWithFrame:inView:)
 					 error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	
 	[self jr_aliasMethod:@selector(interiorBackgroundStyle) 
 			withSelector:@selector(orig_interiorBackgroundStyle)
 				   error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	[self jr_swizzleMethod:@selector(interiorBackgroundStyle)
 				withMethod:@selector(new_interiorBackgroundStyle)
 					 error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	
 }
 - (BOOL)shouldHack {
@@ -222,7 +239,7 @@ static NSGradient *inactiveGradient = nil;
 }
 - (NSBackgroundStyle)new_interiorBackgroundStyle {
 	if (self.shouldHack)
-		return NSBackgroundStyleLowered;
+    return NSBackgroundStyleLowered;
 	return [self orig_interiorBackgroundStyle];
 }
 - (void)new_drawBezelWithFrame:(NSRect)frame inView:(NSView*)arg2 {

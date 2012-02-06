@@ -28,49 +28,49 @@ static NSImage *middleHighlight;
 	[NSThemeFrame jr_aliasMethod:@selector(_drawTitleBar:) 
 					withSelector:@selector(orig_drawTitleBar:) 
 						   error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	[NSThemeFrame jr_swizzleMethod:@selector(_drawTitleBar:)
 						withMethod:@selector(new_drawTitleBar:)
 							 error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	[NSThemeFrame jr_aliasMethod:@selector(drawFrame:) 
 					withSelector:@selector(orig_drawFrame:)
 						   error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	[NSThemeFrame jr_swizzleMethod:@selector(drawFrame:)
 						withMethod:@selector(new_drawFrame:)
 							 error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	[NSThemeFrame jr_aliasMethod:@selector(_customTitleCell) 
 					withSelector:@selector(orig_customTitleCell) 
 						   error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	[NSThemeFrame jr_swizzleMethod:@selector(_customTitleCell)
 						withMethod:@selector(new_customTitleCell)
 							 error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	[NSThemeFrame jr_aliasMethod:@selector(dealloc) 
 					withSelector:@selector(orig_dealloc)
 						   error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	[NSThemeFrame jr_swizzleMethod:@selector(dealloc)
 						withMethod:@selector(new_dealloc)
 							 error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	[NSThemeFrame jr_aliasMethod:@selector(drawRect:) 
 					withSelector:@selector(orig_drawRect:)
 						   error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 	[NSThemeFrame jr_swizzleMethod:@selector(drawRect:)
 						withMethod:@selector(new_drawRect:)
 							 error:&err];
-	NSLog(@"%@", err);
+	//NSLog(@"%@", err);
 }
 - (BOOL)isBMXCustomized {
 	Method origMethod = class_getInstanceMethod([self class], @selector(new_drawTitleBar:));
 	if (!origMethod)
 		return NO;
-	NSLog(@"customized");
+	//NSLog(@"customized");
 	return YES;
 }
 
@@ -221,6 +221,8 @@ static NSImage *middleHighlight;
 										  cornerRadius:cornerRadius-0.5
 											 inCorners:corner];
 		[[NSColor blackColor] set];
+// 		[[NSColor greenColor] set];
+//        [[NSColor colorWithDeviceRed:0.8 green:1.0 blue:0.0 alpha:1.0] set];
 		[path fill];
 		// Lower the actual fill 1pt
 		rect.size.height-=1;

@@ -17,6 +17,7 @@
 + (NSGradient*)redGradient;
 + (NSGradient*)yellowGradient;
 + (NSGradient*)greenGradient;
++ (NSGradient*)zurieGradient;
 + (NSGradient*)silverGradient;
 + (NSGradient*)disabledGradient;
 

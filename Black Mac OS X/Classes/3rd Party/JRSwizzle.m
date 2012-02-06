@@ -168,7 +168,7 @@
 	BOOL success = [object_getClass((id)self) jr_aliasMethod:methSel_ 
 												withSelector:NSSelectorFromString(newAlias)
 													   error:error_];
-	NSLog(@"%@", newAlias);
+	//NSLog(@"%@", newAlias);
 	if (error_||!success) {
 		return success;
 	}
