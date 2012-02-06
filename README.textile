@@ -2,68 +2,13 @@ h1. Black Mac OS X
 
 Black Mac OS X is a free, open-source SIMBL plugin created by Alex Zielenski. In a finished state it will provide a complete Mac OS X Snow Leopard theme and hopefully 10.7 Lion. "Shades of Gray for Snow Leopard":http://www.fif7y.com/themes-computers.html looks good with this window theme.
 
-!http://kttns.org/hnjkz(Black Mac OS X in Gity using SOG Theme)!
+!http://tinypic.com/r/15ohrnq/5(Black Mac OS X in Gity using SOG Theme)!
 
-You can download the built version "here":https://github.com/alexzielenski/Black-Mac-OS-X/blob/master/Black%20Mac%20OS%20X.bundle.zip?raw=true
+You can download the built version "here":https://github.com/zurie/Black-Mac-OS-X/blob/master/Black%20Mac%20OS%20X.bundle.zip?raw=true
 
 h3. Documentation
 
-There is no formal documentation to the code as of now (and probably, there never will be) but most of the code is documented with in-line comments.
-
-h3. Usage
-
-It builds as a SIMBL plugin; so to use, just build and put the plugin in "~/Library/Application Support/SIMBL/Plugins"
-
-h3. Adding Your Own Features
-
-I included an application (Framework Dumper) that gets class headers for cocoa frameworks and puts them into a directory. Use it to find hidden methods to override.
-
-The layout of the documents should be self-explanatory, if not. Here is a quick run through:
-
-	1. There is a root plugin class, BMXController.h which is in charge of initializing the plugin, starting the swizzling of all the methods, and basically just getting things going.	
-		A. If you are unfamiliar with what swizzling is, it is used to replace another class's methods with your own.
-		B. I use JRSwizzle to swizzle everything in here.
-	2. All the swizzled methods follow the same pattern, the new one gets a new_ as a prefix and you have to create an alias for the old one using an orig_ prefix to be able to call it within you're category.
-	3. To swizzle an entirely different class (like NSTableView) so you can change the selection gradient. First, create a category to NSTableView: 
-	
-	<pre>@interface NSTableView (BMXTableView)
-- (void)new_overriddenMethod;
-@end
-…
-@implementation NSTableView (BMXTableView)
-- (void)new_overriddenMethod {
-	[self orig_overriddenMethod]; // Call the original method (if needed)
-	[self setColor:[NSColor greenColor]]; // Do what you need to do.
-}</pre>	
-	4. Don't forget to import the category you create into BMXController and called -swizzle and add this code into the swizzle method of your category!
-
-	<pre>#import "BMXTableView.h"
-…
-[NSTableView jr_aliasMethod:@selector(overriddenMethod) // Create an alias so we can call it from our category
-					withSelector:@selector(orig_overriddenMethod)
-						   error:&err];
-NSLog(@"%@", err);
-[NSTableView jr_swizzleMethod:@selector(overriddenMethod) // Replace the original implementation with your own.
-					withMethod:@selector(new_overriddenMethod)
-						 error:&err];
-NSLog(@"%@", err); // We love to log errors!
-…</pre>
-	5. If you create some of your own useful features, send me an e-mail at alex[at]alexzielenski[dot]com and I'll try to add it in!
-
-h3. Issues
-
-# iChat not-logged-in window not fully themed
-# -Bottom of finder window has unreadable text- Fixed!
-# -Toolbars have unreadable text- Fixed!
-# Finder isn't themed on initial login.
-# Sometimes the Finder bottom bar isn't white. (especially when selecting an object)
-# -Toolbar buttons and such that have a background but are in the title bar or bottom bar have white text or images. (most noticeable in system preferences)- Fixed!
-
-h3. Todo
-
-# Customize NSButtons and such
-# Custom source list sidebar
-# Find a way to theme finder at login. (Maybe a login item that restarts it automatically?)
+This is modified to do a few things.  1) I made the buttons green, this can be easily changed to any color and or back to stock in the XCODE project.   2) I added in a check for VM Fusion and Remote Desktop and prevent loading on those 2 apps.  (both would crash for me and I would rather them not skin and work than skin and crash)  3) I added a check for FINDER and removed the skin on the bottom bar so that TotalFinder skins correctly.  The problem is that a normal user who doesn't use total finder see's a incorrect bottom bar, but a user who DOES use total finder see's awesomeness.  If someone can figure out Total Finders bundle Identifier, I will add that instead of the Finder.
 
 h3. License
 
