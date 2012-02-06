@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9B374E1F14DB15A700392748 /* _NSThemeWidgetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _NSThemeWidgetCell.h; path = AppKit/_NSThemeWidgetCell.h; sourceTree = "<group>"; };
+		9BF162F014DF77F800C74F9F /* _NSThemeWidgetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _NSThemeWidgetCell.h; sourceTree = "<group>"; };
 		FA16383512FE09B300A6B1DD /* NSFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFrameView.h; sourceTree = "<group>"; };
 		FA16383612FE09B300A6B1DD /* NSThemeFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSThemeFrame.h; sourceTree = "<group>"; };
 		FA16383712FE09B300A6B1DD /* NSTitledFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTitledFrame.h; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		FA16383412FE09B300A6B1DD /* Private Headers */ = {
 			isa = PBXGroup;
 			children = (
-				9B374E1F14DB15A700392748 /* _NSThemeWidgetCell.h */,
+				9BF162F014DF77F800C74F9F /* _NSThemeWidgetCell.h */,
 				FA16383512FE09B300A6B1DD /* NSFrameView.h */,
 				FA16383612FE09B300A6B1DD /* NSThemeFrame.h */,
 				FA16383712FE09B300A6B1DD /* NSTitledFrame.h */,
