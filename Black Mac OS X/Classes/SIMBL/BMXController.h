@@ -19,5 +19,8 @@
     
 }
 + (BMXController *)sharedBMXController;
++(NSColor*)testColor;
++(NSColor*)backgroundColor;
++(NSColor*)clearColor;
 - (void)swizzle;
 @end

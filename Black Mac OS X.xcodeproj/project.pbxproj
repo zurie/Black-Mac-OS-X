@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9026057214E3795900DBB0E1 /* NSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = 9026057114E3795900DBB0E1 /* NSFileManager+DirectoryLocations.m */; };
+		9026058614E386EB00DBB0E1 /* NSColor+FromName.m in Sources */ = {isa = PBXBuildFile; fileRef = 9026058514E386EB00DBB0E1 /* NSColor+FromName.m */; };
 		FA16383B12FE0CF100A6B1DD /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FA16383A12FE0CF100A6B1DD /* JRSwizzle.m */; };
 		FA16383E12FE0D9100A6B1DD /* BMXThemeFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = FA16383D12FE0D9000A6B1DD /* BMXThemeFrame.m */; };
 		FA16384112FE107200A6B1DD /* NSBezierPath+PXRoundedRectangleAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA16384012FE107200A6B1DD /* NSBezierPath+PXRoundedRectangleAdditions.m */; };
@@ -23,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9026057014E3795900DBB0E1 /* NSFileManager+DirectoryLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+DirectoryLocations.h"; sourceTree = "<group>"; };
+		9026057114E3795900DBB0E1 /* NSFileManager+DirectoryLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+DirectoryLocations.m"; sourceTree = "<group>"; };
+		9026058414E386EB00DBB0E1 /* NSColor+FromName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+FromName.h"; sourceTree = "<group>"; };
+		9026058514E386EB00DBB0E1 /* NSColor+FromName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+FromName.m"; sourceTree = "<group>"; };
 		9BF162F014DF77F800C74F9F /* _NSThemeWidgetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _NSThemeWidgetCell.h; sourceTree = "<group>"; };
 		FA16383512FE09B300A6B1DD /* NSFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFrameView.h; sourceTree = "<group>"; };
 		FA16383612FE09B300A6B1DD /* NSThemeFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSThemeFrame.h; sourceTree = "<group>"; };
@@ -155,6 +161,10 @@
 		FA9626AE12FE016300EE150A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9026057014E3795900DBB0E1 /* NSFileManager+DirectoryLocations.h */,
+				9026057114E3795900DBB0E1 /* NSFileManager+DirectoryLocations.m */,
+				9026058414E386EB00DBB0E1 /* NSColor+FromName.h */,
+				9026058514E386EB00DBB0E1 /* NSColor+FromName.m */,
 				FA9626AF12FE019E00EE150A /* BMXController.h */,
 				FA9626B012FE019E00EE150A /* BMXController.m */,
 				FAC011B912FF2F3500899833 /* Categories */,
@@ -262,6 +272,8 @@
 				FAC2181512FF2FC000392069 /* BMXObject.m in Sources */,
 				FA2860E61352861700DA2437 /* NSBezierPath+MCAdditions.m in Sources */,
 				FA35FC5A13530CFB00108818 /* BMXThemeWidgetCell.m in Sources */,
+				9026057214E3795900DBB0E1 /* NSFileManager+DirectoryLocations.m in Sources */,
+				9026058614E386EB00DBB0E1 /* NSColor+FromName.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
