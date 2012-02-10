@@ -152,8 +152,9 @@ static void CGPathCallback(void *info, const CGPathElement *element)
 	
 	[self addClip];
 	[shadow set];
-	[[NSColor blackColor] set];
-	[drawingPath fill];
+	//[[NSColor blackColor] set];
+	
+    [drawingPath fill];
 	
 	shadow.shadowOffset = originalOffset;
 	

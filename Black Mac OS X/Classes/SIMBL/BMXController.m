@@ -75,15 +75,20 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(BMXController); // Create easy singleton. Thanks 
     if (color2) {
         return color2;
         }
-    return [NSColor blackColor];
+    return nil;
 }
 
-+(NSColor*)testColor{
-    return [self colorForKey:@"TestColor"];
++(NSColor*)toolbarButtonColor{
+    return [self colorForKey:@"ToolbarButtonColor"];
 }
+
++(NSColor*)toolbarButtonAltColor{
+    return [self colorForKey:@"ToolbarButtonAltColor"];
+}
+
 
 +(NSColor*)backgroundColor{
-    return [self colorForKey:@"backgroundColor"];
+    return [self colorForKey:@"BackgroundColor"];
 }
 
 +(NSColor*)clearColor{

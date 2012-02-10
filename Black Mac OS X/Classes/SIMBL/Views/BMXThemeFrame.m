@@ -220,9 +220,8 @@ static NSImage *middleHighlight;
 		path = [NSBezierPath bezierPathWithRoundedRect:rect
 										  cornerRadius:cornerRadius-0.5
 											 inCorners:corner];
-		//[[NSColor blackColor] set];
-        [[BMXController backgroundColor] set];       
-//        [[NSColor colorWithDeviceRed:0.8 green:1.0 blue:0.0 alpha:1.0] set];
+		[[NSColor blackColor] set];
+        //        [[NSColor colorWithDeviceRed:0.8 green:1.0 blue:0.0 alpha:1.0] set];
 		[path fill];
 		// Lower the actual fill 1pt
 		rect.size.height-=1;

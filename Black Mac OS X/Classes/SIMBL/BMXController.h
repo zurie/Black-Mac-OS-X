@@ -19,7 +19,8 @@
     
 }
 + (BMXController *)sharedBMXController;
-+(NSColor*)testColor;
++(NSColor*)toolbarButtonColor;
++(NSColor*)toolbarButtonAltColor;
 +(NSColor*)backgroundColor;
 +(NSColor*)clearColor;
 - (void)swizzle;

@@ -84,14 +84,27 @@ return (chrome);
 }
 /*- (NSBackgroundStyle)interiorBackgroundStyle {
 	return NSBackgroundStyleLowered;
+ 
+ return [BMXController testColor];
+
 }*/
 - (NSGradient*)titleGradient {
 	if (!titleGradient)
-		titleGradient = [[[NSGradient alloc] initWithStartingColor:[NSColor colorWithDeviceWhite:0.319 alpha:1.000]
-													   endingColor:[NSColor colorWithDeviceWhite:0.160 alpha:1.000]] retain];
+        if ([BMXController toolbarButtonColor] && [BMXController toolbarButtonAltColor] != nil) {
+		titleGradient = [[[NSGradient alloc] initWithStartingColor:[BMXController toolbarButtonColor]
+                                                       endingColor:[BMXController toolbarButtonAltColor]] retain];
+        } else {
+            titleGradient = [[[NSGradient alloc] initWithStartingColor:[NSColor colorWithDeviceWhite:0.319 alpha:1.000]
+                                                           endingColor:[NSColor colorWithDeviceWhite:0.160 alpha:1.000]] retain];
+        }
 	if (!inactiveGradient)
-		inactiveGradient = [[[NSGradient alloc] initWithStartingColor:[NSColor colorWithDeviceWhite:0.340 alpha:1.000]
-														  endingColor:[NSColor colorWithDeviceWhite:0.240 alpha:1.000]] retain];
+        if ([BMXController toolbarButtonColor] && [BMXController toolbarButtonAltColor] != nil) {
+		inactiveGradient = [[[NSGradient alloc] initWithStartingColor:[BMXController toolbarButtonColor]
+                                                          endingColor:[BMXController toolbarButtonAltColor]] retain];
+        } else {
+        inactiveGradient = [[[NSGradient alloc] initWithStartingColor:[NSColor colorWithDeviceWhite:0.340 alpha:1.000]
+                                                          endingColor:[NSColor colorWithDeviceWhite:0.240 alpha:1.000]] retain];
+        }
 	if (![self.controlView.window isKeyWindow]) {
 		return inactiveGradient;
 	}
@@ -103,8 +116,13 @@ return (chrome);
 + (NSGradient*)selectedGradient {
 	static NSGradient *selectedGradient;
 	if (!selectedGradient) {
-		selectedGradient=[[NSGradient alloc] initWithStartingColor:[[NSColor whiteColor]colorWithAlphaComponent:0.45f] 
+        if ([BMXController backgroundColor] != nil) {
+		selectedGradient=[[NSGradient alloc] initWithStartingColor:[BMXController backgroundColor] 
 													   endingColor:[NSColor clearColor]];
+        } else {
+            selectedGradient=[[NSGradient alloc] initWithStartingColor:[[NSColor whiteColor]colorWithAlphaComponent:0.45f] 
+                                                           endingColor:[NSColor clearColor]];
+        }
 	}
 	return selectedGradient;
 }
