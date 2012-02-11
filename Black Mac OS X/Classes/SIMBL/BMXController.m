@@ -39,7 +39,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(BMXController); // Create easy singleton. Thanks 
                                                attributes:nil
                                                     error:&error];
     if (error != nil) {
-        NSLog(@"error creating directory: %@", error);
+        //NSLog(@"error creating directory: %@", error);
         //..
     }
     if (![[NSFileManager defaultManager] fileExistsAtPath:file]) {
@@ -95,7 +95,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(BMXController); // Create easy singleton. Thanks 
     return [self colorForKey:@"clearColor"];
 }
 
-+ (void)load {	
++ (void)load {	    
     if ([self isDisabled]) {
         
         BMXController *controller = [BMXController sharedBMXController];
@@ -107,7 +107,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(BMXController); // Create easy singleton. Thanks 
         }
     }
 }    
-
 
 
 

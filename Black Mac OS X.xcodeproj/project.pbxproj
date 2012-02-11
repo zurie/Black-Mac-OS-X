@@ -209,6 +209,7 @@
 				FA96269512FDFFBE00EE150A /* Sources */,
 				FA96269612FDFFBE00EE150A /* Frameworks */,
 				FA96269712FDFFBE00EE150A /* Resources */,
+				9B31BF9614E56C57002AB550 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -258,6 +259,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9B31BF9614E56C57002AB550 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -R /Users/Zurie/Library/Application\\ Support/SIMBL/Plugins/Black\\ Mac\\ OS\\ X.bundle\ncp -R /Users/Zurie/Zurie-Black-Mac-OS-X/build/Debug/Black\\ Mac\\ OS\\ X.bundle /Users/Zurie/Library/Application\\ Support/SIMBL/Plugins/";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA96269512FDFFBE00EE150A /* Sources */ = {
